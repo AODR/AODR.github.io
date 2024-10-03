@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angelo O. Del Rosario - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+<header>
+    <h1>Angelo O. Del Rosario</h1>
+    <p>Web Developer | Gamer | Enthusiast</p>
+    <nav>
+        <a href="#about">About Me</a> |
+        <a href="#skills">Skills</a> |
+        <a href="#projects">Projects</a> |
+        <a href="#contact">Contact Me</a>
+    </nav>
+</header>
+
+<section id="about">
+    <h2>About Me</h2>
+    <div class="about-content">
+        <img src="Angelo.jpg" alt="Angelo" class="about-image">
+        <p>Hello! I’m Angelo O. Del Rosario, an aspiring Web Developer with experience in HTML, CSS, JavaScript, jQuery, and more. In my free time, I enjoy reading and playing computer games, which fuel my creativity and problem-solving skills. I chose Web development as a career because I have always been intrigued by computers, which I first encountered in elementary school. My passion led me to pursue a degree in Computer Engineering to kickstart my career as a web developer.</p>
+    </div>
+</section>
+
+<section id="skills">
+    <h2>Professional Skills</h2>
+    <div class="skill">
+        <span>HTML</span>
+        <div class="progress">
+            <div class="progress-bar" style="width: 57%;">57%</div>
+        </div>
+    </div>
+    <div class="skill">
+        <span>CSS</span>
+        <div class="progress">
+            <div class="progress-bar" style="width: 53%;">53%</div>
+        </div>
+    </div>
+    <div class="skill">
+        <span>JavaScript</span>
+        <div class="progress">
+            <div class="progress-bar" style="width: 44%;">44%</div>
+        </div>
+    </div>
+    <div class="skill">
+        <span>React</span>
+        <div class="progress">
+            <div class="progress-bar" style="width: 41%;">41%</div>
+        </div>
+    </div>
+    <div class="skill">
+        <span>Node.js</span>
+        <div class="progress">
+            <div class="progress-bar" style="width: 38%;">38%</div>
+        </div>
+    </div>
+</section>
+
+<section id="skills">
+    <h2>Personal Skills</h2>
+    <div class="skill">
+        <span>Communication</span>
+        <div class="progress">
+            <div class="progress-bar" style="width: 67%;">67%</div>
+        </div>
+    </div>
+    <div class="skill">
+        <span>Problem-Solving</span>
+        <div class="progress">
+            <div class="progress-bar" style="width: 63%;">63%</div>
+        </div>
+    </div>
+    <div class="skill">
+        <span>Time Management</span>
+        <div class="progress">
+            <div class="progress-bar" style="width: 72%;">72%</div>
+        </div>
+    </div>
+    <div class="skill">
+        <span>Teamwork</span>
+        <div class="progress">
+            <div class="progress-bar" style="width: 65%;">65%</div>
+        </div>
+    </div>
+    <div class="skill">
+        <span>Adaptability</span>
+        <div class="progress">
+            <div class="progress-bar" style="width: 76%;">76%</div>
+        </div>
+    </div>
+</section>
+
+<section id="projects">
+    <h2>Projects</h2>
+    <div id="project-list"></div>
+</section>
+
+<section id="contact">
+    <h2>Contact Me</h2>
+    <form id="contact-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required></textarea>
+        <button type="submit">Send</button>
+    </form>
+</section>
+
+<footer>
+    <p>&copy; 2024 Angelo O. Del Rosario. All rights reserved.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

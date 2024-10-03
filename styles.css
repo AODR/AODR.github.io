@@ -1,0 +1,185 @@
+/* styles.css */
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: #f9f9f9; /* Light background */
+}
+
+header {
+    background: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header nav {
+    margin-top: 10px;
+}
+
+header nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    transition: color 0.3s;
+}
+
+header nav a:hover {
+    color: blue; /* Slightly lighter on hover */
+}
+
+section {
+    background: #fff;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px; /* Center the content */
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+h2 {
+    text-align: center;
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 0 0 20px;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+}
+
+.about-image {
+    width: 150px;
+    border-radius: 50%;
+    margin-right: 20px;
+    border: 3px solid #333; /* Add a border to the image */
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+}
+
+#skills {
+    text-align: center; /* Center align the section */
+}
+
+#skills li {
+    display: inline-block; /* Ensure each skill is inline-block */
+    margin: 5px 10px; /* Add some space between skills */
+    padding: 10px 15px;
+    background: #eee; /* Background for skill items */
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+#skills li:hover {
+    background: #ddd; /* Slightly darker on hover */
+}
+
+.skill {
+    margin: 10px 0; /* Space between skills */
+}
+
+.progress {
+    background-color: #eee; /* Light gray background */
+    border-radius: 5px; /* Rounded corners */
+    overflow: hidden; /* Hide overflow */
+    height: 20px; /* Height of the progress bar */
+}
+
+.progress-bar {
+    background-color: #4caf50; /* Green color for the progress bar */
+    color: white; /* Text color */
+    text-align: center; /* Center the text */
+    line-height: 20px; /* Center text vertically */
+    height: 100%; /* Full height */
+    transition: width 0.4s ease; /* Animation on width change */
+}
+
+#projects {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Space between projects */
+}
+
+#projects h2 {
+    writing-mode: vertical-rl; /* Rotate text vertically */
+    transform: rotate(180deg); /* Flip it to be readable */
+    margin: 0; /* Remove default margin */
+    padding: 10px; /* Add some padding */
+    text-align: center; /* Center the text */
+}
+
+.project {
+    border: 1px solid #ddd;
+    margin: 10px;
+    padding: 10px;
+    flex: 1 1 30%; /* Responsive design */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    border-radius: 5px;
+    transition: transform 0.2s; /* Animation on hover */
+}
+
+.project:hover {
+    transform: scale(1.02); /* Slight zoom effect */
+}
+
+
+
+#contact form {
+    display: flex;
+    flex-direction: column;
+}
+
+#contact label {
+    margin: 10px 0 5px;
+}
+
+#contact input,
+#contact textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+#contact button {
+    background: #333;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#contact button:hover {
+    background: #555; /* Darker on hover */
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background: #333;
+    color: #fff;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+@media (max-width: 600px) {
+    #projects {
+        flex-direction: column; /* Stack projects vertically */
+    }
+
+    .about-content {
+        flex-direction: column; /* Stack image and text vertically */
+        align-items: center; /* Center the image and text in mobile view */
+    }
+}
