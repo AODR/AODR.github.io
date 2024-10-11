@@ -103,7 +103,7 @@ ul {
 #projects {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between; /* Space between projects */
+    justify-content: space-between;
 }
 
 #projects h2 {
@@ -182,23 +182,19 @@ footer {
     #projects {
         flex-direction: column;
         align-items: center;
-        height: auto;
+        padding: 0 10px; /* Adjust padding on smaller screens */
     }
 
     #projects h2 {
         writing-mode: horizontal-tb;
         transform: rotate(0);
-        width: 100%;
+        width: auto; /* Adjust width for heading */
         height: auto;
-    }
-
-    #project-list {
-        justify-content: center;
-        height: auto;
+        margin-bottom: 20px; /* Add space below the heading */
     }
 
     .project {
-        flex-basis: 100%;
+        flex-basis: 100%; /* Full width for projects on small screens */
     }
 
     .about-content {
