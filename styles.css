@@ -1,138 +1,398 @@
-/* Basic styles for the landing page and quiz */
+
+:root {
+    --primary-color: #2C3E50;
+    --secondary-color: #34495E;
+    --accent-color: #3498DB;
+    --text-color: #333;
+    --background-color: #F4F6F7;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #e9ecef; /* Light gray background */
+    line-height: 1.6;
+    background-color: #f9f9f9;
+}
+
+header {
+    height: 100vh;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    min-height: 100vh; /* Ensure body takes at least full height */
-}
-
-/* Header and footer styling */
-header, footer {
-    width: 100%;
-    background-color: #007bff; /* Bootstrap primary color */
-    color: white;
-    padding: 15px 0; /* Increased padding for better appearance */
     text-align: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    color: rgb(156, 216, 252); /* Adjust color as needed */
 }
 
-/* Main content area */
-main {
-    width: 90%;
-    max-width: 600px;
-    background-color: white;
-    padding: 20px;
-    margin: 20px 0; /* Space above and below main content */
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Softer shadow for depth */
-    display: flex;
-    flex-direction: column; /* Stack content vertically */
-    align-items: center; /* Center children horizontally */
+nav a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.938); /* Adjust color as needed */
 }
 
-/* Hidden sections for the quiz */
-#quiz-section, #score-section {
-    display: none;
+h1 {
+    font-size: 3em;
+    color: rgb(255, 255, 255); /* Adjust color as needed */
 }
 
-/* Progress bar styling */
-#progress-bar-container {
-    width: 100%; /* Full width for the progress bar container */
-    max-width: 600px; /* Match the container's width */
-    height: 20px; /* Height for the progress bar */
-    background-color: #ccc; /* Background color */
-    margin-bottom: 20px; /* Space below the progress bar */
-    display: flex; /* Use flexbox to arrange segments */
-    border-radius: 10px; /* Rounded corners */
-    overflow: hidden; /* Ensure segments don't overflow */
-}
-
-/* Progress bar segments */
-.progress-segment {
-    flex: 1; /* Make each segment take equal space */
-    height: 100%; /* Full height of the container */
-    border-radius: 5px; /* Rounded corners */
-    background-color: transparent; /* Initially transparent */
-}
-
-/* Question container styling */
-#question-container {
-    margin-bottom: 20px;
-    width: 100%; /* Full width for questions */
-}
-
-/* Fixed size for progress bar and submit button */
-#progress-bar-container, #submit-answer {
-    width: 600px; /* Fixed width */
-    max-width: 100%; /* Responsive on smaller screens */
-}
-
-/* Button styling */
-button {
-    padding: 10px 20px;
-    background-color: #28a745; /* Green color for buttons */
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1.1em; /* Slightly larger text for readability */
-    margin-top: 10px; /* Space above buttons */
-    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-}
-
-button:hover {
-    background-color: #218838; /* Darker green on hover */
-    transform: translateY(-2px); /* Lift effect on hover */
-}
-
-/* Responsive design adjustments */
-@media (max-width: 600px) {
-    main {
-        width: 95%; /* Slightly wider on small screens */
-    }
-
-    button {
-        width: 100%; /* Full-width buttons on small screens */
-    }
-}
-
-/* Footer fixed at the bottom */
-footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%; /* Ensure footer takes full width */
-}
-
-/* Additional styles for feedback messages */
-#feedback {
-    font-size: 1.2em; /* Increase font size for feedback */
+header nav {
     margin-top: 10px;
-    text-align: center; /* Center text */
 }
 
-/* Styles for quiz sections */
-h2, h3 {
-    color: #343a40; /* Dark gray color for headers */
-    text-align: center; /* Centered headers */
+header nav a {
+    color: #ffffffb7;
+    text-decoration: none;
+    margin: 0 15px;
+    transition: color 0.3s;
+}
+
+.header-bg-1 {
+    background-color: #000000e8;
+}
+
+header nav a:hover {
+    color: blue;
+}
+
+section {
+    background: #fff;
+    padding: 30px;
+    margin: 30px auto;
+    max-width: 1100px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.section-bg-1 {
+    background-color: #ffffff;
+}
+
+.languages-image {
+    max-width: 150px; /* Set the desired maximum width */
+    max-height: 150px; /* Set the desired maximum height */
+    object-fit: contain; /* Ensure the image is contained within the area without distortion */
+    border-radius: 8px; /* Optional: Add rounded corners */
+    margin: 10px; /* Optional: Add margin for spacing */
 }
 
 h2 {
-    margin-bottom: 20px; /* Space below h2 */
+    text-align: center;
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 0 0 20px;
 }
 
-h3 {
-    margin: 15px 0; /* Space above and below h3 */
+.about-content {
+    display: flex;
+    align-items: center;
 }
 
-/* Styles for labels and choices */
-label {
-    display: block; /* Block-level to separate choices */
-    margin: 10px 0; /* Space between choices */
-    font-size: 1em; /* Standard size for choices */
+.about-image {
+    width: 150px;
+    border-radius: 50%;
+    margin-right: 20px;
+    border: 3px solid #333;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+}
+
+.languages-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.language-card {
+    flex: 1 1 calc(33.333% - 20px); /* Three items per row with some margin */
+    box-sizing: border-box;
+    margin: 10px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    background-color: #fff;
+}
+
+.project-technologies {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.tech-tag {
+    background-color: #509ffa;
+    color: white;
+    padding: 3px 8px;
+    margin: 0 5px;
+    border-radius: 3px;
+    font-size: 0.8em;
+}
+
+.filter-button.active {
+    background-color: #407ac5;
+}
+
+.language-card img {
+    max-width: 100%;
+    max-height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.language-card h3 {
+    margin: 0;
+    font-size: 1.2em;
+    color: #333;
+}
+
+#skills {
+    text-align: center;
+}
+
+#skills li {
+    display: inline-block;
+    margin: 5px 10px;
+    padding: 10px 15px;
+    background: #eee;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+#skills li:hover {
+    background: #ddd;
+}
+
+.skill {
+    margin: 10px 0;
+}
+
+.progress {
+    background-color: #eee;
+    border-radius: 5px;
+    overflow: hidden;
+    height: 20px;
+    position: relative; /* Add this to position the text absolutely */
+}
+
+.progress-bar {
+    background-color: #4caf50;
+    color: white;
+    text-align: center;
+    line-height: 20px;
+    height: 100%;
+    transition: width 0.4s ease;
+    position: relative; /* Ensure the text is positioned within the bar */
+}
+
+.progress-bar::after {
+    content: attr(data-percentage); /* Use the data-percentage attribute for the text */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%; /* Ensure the text is centered within the bar */
+    text-align: center;
+    color: white; /* Adjust color as needed */
+    font-weight: bold;
+}
+
+#projects {
+    position: relative;
+    padding-top: 25px; 
+}
+
+#projects h2 {
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 10px;
+    text-align: center;
+    z-index: 10;
+}
+
+.filters {
+    top: 40px; /* Adjust based on the height of the heading */
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    text-align: center;
+    padding: 10px 0;
+    z-index: 10;
+}
+
+#project-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    overflow-y: auto;
+    height: 500px; /* Set a fixed height for the project list container */
+}
+
+.project {
+    flex: 1 1 calc(33.333% - 20px); /* Three items per row with some margin */
+    box-sizing: border-box;
+    margin: 10px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    opacity: 1;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.project.hidden {
+    opacity: 0;
+    transform: scale(0.95);
+    pointer-events: none;
+}
+
+.project img {
+    max-width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.filters {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.filter-button {
+    margin: 5px;
+    padding: 10px 20px;
+    border: none;
+    background-color: #509ffa;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.filter-button:hover {
+    background-color: #407ac5;
+}
+
+.filter-button.active {
+    background-color: #407ac5;
+}
+
+.project:hover {
+    transform: scale(1.02); /* Slight zoom effect */
+}
+
+#contact {
+    text-align: center;
+    padding: 20px;
+}
+
+.contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.contact-form,
+.social-media {
+    flex: 1 1 45%; /* Adjust the width as needed */
+    max-width: 500px;
+    box-sizing: border-box;
+}
+
+#contact form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#contact label {
+    margin: 10px 0 5px;
+}
+
+#contact input,
+#contact textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+#contact button {
+    background: #333;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#contact button:hover {
+    background: #555;
+}
+
+.social-media {
+    text-align: center;
+}
+
+.social-media h3 {
+    margin-bottom: 10px;
+}
+
+.social-icon {
+    margin: 0 10px;
+    color: #333;
+    font-size: 24px;
+    transition: color 0.3s;
+}
+
+.social-icon:hover {
+    color: #3498DB; /* Adjust color as needed */
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background: #333;
+    color: #fff;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-form,
+    .social-media {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
 }

@@ -1,102 +1,131 @@
 $(document).ready(function() {
-    const questions = [
+    // Project data with improved structure
+    const projects = [
         {
-            question: "What does HTML stand for?",
-            choices: ["Hyperlinks and Text Markup Language", "Home Tool Markup Language", "Hyper Text Markup Language", "Hyper Text Multiple Language"],
-            correctAnswer: 2
+            name: "Margot Database System",
+            description: "A web application made using C#, HTML, Javascript, and CSS.",
+            link: "https://sites.google.com/view/aodr-dev-projects/margot-database",
+            image: "images/BRM.png",
+            technologies: ["C#", "JavaScript", "HTML", "CSS"]
         },
         {
-            question: "What does CSS stand for?",
-            choices: ["Computer Style Sheets", "Cascading Style Sheets", "Creative Style Sheets", "Colorful Style Sheets"],
-            correctAnswer: 1
+            name: "Fitness App",
+            description: "An android application to track fitness progress developed using Kotlin and Android Studio.",
+            link: "https://sites.google.com/view/aodr-dev-projects/fitness-app",
+            image: "images/FA.png",
+            technologies: ["Kotlin"]
         },
         {
-            question: "What does JS stand for?",
-            choices: ["JustScript", "JavaSuper", "JavaScript", "JunkScript"],
-            correctAnswer: 2
+            name: "Turn Based RPG",
+            description: "A simple turn-based RPG using KOTLIN OOP and Android Studio.",
+            link: "https://github.com/MoonSlay/RPGTurn",
+            image: "images/RPGTurn.png",
+            technologies: ["Kotlin"]
         },
         {
-            question: "What is the correct way to write a JavaScript array?",
-            choices: ["var colors = (1:'red', 2:'green', 3:'blue')", "var colors = 'red', 'green', 'blue'", "var colors = ['red', 'green', 'blue']", "var colors = {red, green, blue}"],
-            correctAnswer: 2
+            name: "Dice Roll",
+            description: "A simple android application to roll a dice using Kotlin and Android Studio.",
+            link: "https://github.com/AODR/DiceRoll",
+            image: "images/DiceRoll.png",
+            technologies: ["Kotlin"]
         },
         {
-            question: "Which HTML element is used to define a JavaScript script?",
-            choices: ["&lt;script&gt;", "&lt;js&gt;", "&lt;javascript&gt;", "&lt;code&gt;"],
-            correctAnswer: 0
+            name: "5 Question Quiz Webpage",
+            description: "A simple 5-question Quiz webpage made using HTML, CSS, and JavaScript.",
+            link: "https://github.com/MoonSlay/VS-Code/tree/main/ExamElect3",
+            image: "images/QuizWeb.png",
+            technologies: ["JavaScript", "HTML", "CSS"]
+        },
+        {
+            name: "Quote Repository",
+            description: "A library containing various types of quotes made using KOTLIN OOP and Android Studio.",
+            link: "https://github.com/MoonSlay/NavigationDrawerLesson",
+            image: "images/QuoteRepo.png",
+            technologies: ["Kotlin"]
         }
     ];
 
-    let currentQuestionIndex = 0;
-    let score = 0;
+    // Improved project rendering function
+    function renderProjects(filteredProjects) {
+        const projectList = $('#project-list');
+        projectList.empty();
 
-    // Create and append the progress segments
-    function createProgressSegments() {
-        for (let i = 0; i < questions.length; i++) {
-            $('#progress-bar-container').append('<div class="progress-segment"></div>');
-        }
-    }
-
-    function loadQuestion() {
-        if (currentQuestionIndex < questions.length) {
-            let question = questions[currentQuestionIndex];
-            $('#question-container').html(`
-                <h3>${question.question}</h3>
-                <form id="question-form">
-                    ${question.choices.map((choice, index) => `
-                        <label>
-                            <input type="radio" name="answer" value="${index}"> ${choice}
-                        </label><br>
-                    `).join('')}
-                </form>
+        filteredProjects.forEach(project => {
+            const projectElement = $(`
+                <article class="project">
+                    <img src="${project.image}" alt="${project.name}" class="project-image">
+                    <h3>${project.name}</h3>
+                    <p>${project.description}</p>
+                    <div class="project-technologies">
+                        ${project.technologies.map(tech => `<span class="tech-tag">${tech}</span>`).join('')}
+                    </div>
+                    <a href="${project.link}" target="_blank" class="project-link">View Project</a>
+                </article>
             `);
-            $('#feedback').html('');
-        } else {
-            showScore();
-        }
+            projectList.append(projectElement);
+        });
     }
 
-    function showScore() {
-        $('#quiz-section').hide();
-        $('#score-section').show();
-        $('#score-message').html(`You scored ${score} out of ${questions.length}`);
-    }
+    // Initialize project display
+    renderProjects(projects);
 
-    $('#start-quiz').click(function() {
-        $('#landing-page').hide();
-        $('#quiz-section').show();
-        createProgressSegments(); // Create segments when quiz starts
-        loadQuestion();
+    // Event handler for technology filters
+    $('.filter-button').on('click', function() {
+        const technology = $(this).data('technology');
+        
+        // Filter projects based on selected technology
+        const filteredProjects = technology 
+            ? projects.filter(project => project.technologies.includes(technology))
+            : projects;
+        
+        // Smooth transition effect
+        $('.project').addClass('hidden');
+        setTimeout(() => {
+            renderProjects(filteredProjects);
+            $('.project').removeClass('hidden');
+        }, 500);
+
+        // Update active filter button
+        $('.filter-button').removeClass('active');
+        $(this).addClass('active');
     });
 
-    $('#submit-answer').click(function() {
-        let selectedAnswer = $('input[name="answer"]:checked').val();
-        if (selectedAnswer === undefined) {
-            alert('Please select an answer!');
-        } else {
-            const segment = $('.progress-segment').eq(currentQuestionIndex); // Select the current segment
+    // Contact form submission handler
+    $('#contact-form').on('submit', function(e) {
+        e.preventDefault();
 
-            if (selectedAnswer == questions[currentQuestionIndex].correctAnswer) {
-                $('#feedback').html('<span style="color:green">Correct!</span>');
-                segment.css('background-color', 'green'); // Green for correct
-                score++;
-            } else {
-                $('#feedback').html('<span style="color:red">Incorrect!</span>');
-                segment.css('background-color', 'red'); // Red for incorrect
+        const formData = {
+            name: $('#name').val().trim(),
+            email: $('#email').val().trim(),
+            message: $('#message').val().trim()
+        };
+
+        // Basic form validation
+        if (!formData.name || !formData.email || !formData.message) {
+            alert('Please fill in all fields.');
+            return;
+        }
+
+        // Email validation regex
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(formData.email)) {
+            alert('Please enter a valid email address.');
+            return;
+        }
+
+        // AJAX form submission
+        $.ajax({
+            url: 'https://script.google.com/macros/s/AKfycbxZxc5II1KdLYMQubeacUNeIEQCvan9anrooytyy6wZ_ebjPgqzk6ddrHp93xPBSAdUIw/exec',
+            method: 'POST',
+            contentType: 'application/x-www-form-urlencoded',
+            data: formData,
+            success: function(response) {
+                alert('Message sent successfully!');
+                $('#contact-form')[0].reset();
+            },
+            error: function() {
+                alert('Error sending message. Please try again later.');
             }
-
-            currentQuestionIndex++;
-            setTimeout(loadQuestion, 1000); // Load the next question after 1 second
-        }
-    });
-
-    $('#restart-quiz').click(function() {
-        currentQuestionIndex = 0;
-        score = 0;
-        $('#progress-bar-container').empty(); // Clear progress bar when restarting
-        $('#score-section').hide(); // Hide score section
-        $('#quiz-section').show(); // Show quiz section again
-        createProgressSegments(); // Recreate progress segments
-        loadQuestion(); // Load the first question
+        });
     });
 });

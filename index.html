@@ -1,42 +1,192 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Web Development Quiz</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angelo O. Del Rosario - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
-  <header>
-    <h1>Web Development Quiz</h1>
-  </header>
+<header class="header-bg-1">
+    <h1>Angelo O. Del Rosario</h1>
+    <nav>
+        <a href="#about">About Me</a> |
+        <a href="#language">Languages</a> |
+        <a href="#skills">Skills</a> |
+        <a href="#projects">Projects</a> |
+        <a href="#contact">Contact Me</a>
+    </nav>
+</header>
 
-  <main>
-    <section id="landing-page">
-      <h2>Welcome to the Web Development Quiz!</h2>
-      <p>Test your knowledge on basic web development topics. Click the button below to get started!</p>
-      <button id="start-quiz">Start Quiz</button>
-    </section>
+<section class="section-bg-1" id="about">
+    <h2>About Me</h2>
+    <div class="about-content">
+        <img src="images/Angelo.jpg" alt="Angelo" class="about-image">
+        <p>Hi, I am Angelo O. Del Rosario, a Computer Engineering student at Angeles University Foundation with a strong passion for technology and software development. I am driven to learn and stay up-to-date with the latest trends in the tech industry. My goal is to apply my skills to create innovative solutions and contribute to the field of software engineering.</p>
+    </div>
+</section>
 
-    <section id="quiz-section" style="display: none;">
-        <div id="progress-bar-container"></div>
-        <div id="question-container"></div>
-        <button id="submit-answer">Submit Answer</button>
-        <div id="feedback"></div>
-    </section>
+<section id="language">
+    <h2>Languages</h2>
+    <div class="languages-container">
+        <div class="language-card">
+            <img src="images/c.png" alt="C">
+            <h3>C#</h3>
+        </div>
+        <div class="language-card">
+            <img src="images/css3.png" alt="CSS3">
+            <h3>CSS3</h3>
+        </div>
+        <div class="language-card">
+            <img src="images/html5.png" alt="HTML5">
+            <h3>HTML5</h3>
+        </div>
+        <div class="language-card">
+            <img src="images/js.png" alt="JavaScript">
+            <h3>JavaScript</h3>
+        </div>
+        <div class="language-card">
+            <img src="images/kotlin.png" alt="Kotlin">
+            <h3>Kotlin</h3>
+        </div>
+        <div class="language-card">
+            <img src="images/php.png" alt="PHP">
+            <h3>PHP</h3>
+        </div>
+        <div class="language-card">
+            <img src="images/python.png" alt="Python">
+            <h3>Python</h3>
+        </div>
+    </div>
+</section>
 
-    <section id="score-section" style="display: none;">
-      <h2>Quiz Complete</h2>
-      <p id="score-message"></p>
-      <button id="restart-quiz">Restart Quiz</button>
-    </section>
-  </main>
+<section id="skills">
+    <h2>Professional Skills</h2>
+    <div class="skill">
+        <span>C#</span>
+        <div class="progress">
+            <div class="progress-bar" style="width: 52%;">52%</div>
+        </div>
+    </div>
+    <div class="skill">
+        <span>CSS3</span>
+        <div class="progress">
+            <div class="progress-bar" style="width: 61%;">61%</div>
+        </div>
+    </div>
+    <div class="skill">
+        <span>HTML5</span>
+        <div class="progress">
+            <div class="progress-bar" style="width: 64%;">54%</div>
+        </div>
+    </div>
+    <div class="skill">
+        <span>JavaScript</span>
+        <div class="progress">
+            <div class="progress-bar" style="width: 58%;">58%</div>
+        </div>
+    </div>
+    <div class="skill">
+        <span>Kotlin</span>
+        <div class="progress">
+            <div class="progress-bar" style="width: 67%;">67%</div>
+        </div>
+    </div>
+    <div class="skill">
+        <span>PHP</span>
+        <div class="progress">
+            <div class="progress-bar" style="width: 56%;">56%</div>
+        </div>
+    </div>
+    <div class="skill">
+        <span>Python</span>
+        <div class="progress">
+            <div class="progress-bar" style="width: 58%;">58%</div>
+        </div>
+    </div>
+</section>
 
-  <footer>
-    <p>© 2024 Web Development Quiz</p>
-  </footer>
+<section id="skills">
+    <h2>Personal Skills</h2>
+    <div class="skill">
+        <span>Communication</span>
+        <div class="progress">
+            <div class="progress-bar" style="width: 93%;">93%</div>
+        </div>
+    </div>
+    <div class="skill">
+        <span>Critical Thinking</span>
+        <div class="progress">
+            <div class="progress-bar" style="width: 87%;">87%</div>
+        </div>
+    </div>
+    <div class="skill">
+        <span>Adaptability</span>
+        <div class="progress">
+            <div class="progress-bar" style="width: 91%;">91%</div>
+        </div>
+    </div>
+    <div class="skill">
+        <span>Time Management</span>
+        <div class="progress">
+            <div class="progress-bar" style="width: 94%;">94%</div>
+        </div>
+    </div>
+    <div class="skill">
+        <span>Teamwork</span>
+        <div class="progress">
+            <div class="progress-bar" style="width: 89%;">89%</div>
+        </div>
+    </div>
+    <div class="skill">
+        <span>Persistance</span>
+        <div class="progress">
+            <div class="progress-bar" style="width: 86%;">86%</div>
+        </div>
+    </div>
+</section>
 
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="script.js"></script>
+<section id="projects">
+    <h2>Projects</h2>
+    <div class="filters">
+        <button class="filter-button" data-technology="">All</button>
+        <button class="filter-button" data-technology="C#">C#</button>
+        <button class="filter-button" data-technology="JavaScript">JavaScript</button>
+        <button class="filter-button" data-technology="Kotlin">Kotlin</button>
+    </div>
+    <div id="project-list"></div>
+</section>
+
+<section id="contact">
+    <h2>Contact Me</h2>
+    <div class="contact-container">
+        <div class="contact-form">
+            <form id="contact-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </div>
+        <div class="social-media">
+            <h3>Here are my Socials</h3>
+            <a href="https://www.facebook.com/yourprofile" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://twitter.com/yourprofile" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.linkedin.com/in/yourprofile" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://github.com/yourprofile" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2024 Angelo O. Del Rosario. All rights reserved.</p>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
